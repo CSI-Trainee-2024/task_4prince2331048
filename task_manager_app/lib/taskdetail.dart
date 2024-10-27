@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TodoCard extends StatelessWidget {
   double screenWidth = 0.0;
   TodoCard(
-      {super.key, required this.title,
+      {required this.title,
         required this.endTime,
         required this.isCompleted,
         required this.onTap,
@@ -29,15 +29,15 @@ class TodoCard extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xffb4b4b4).withOpacity(0.25)//greycolor
+            color: Color(0xffb4b4b4).withOpacity(0.25)//greycolor
         ),
         height: screenWidth * 0.15,
         width: screenWidth * 0.15,
-        child: Image.asset("assets/research.png"),
+      
       ),
       title: Text(title,style: const TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
       subtitle: Text("$startTime - $endTime",style: const TextStyle(fontSize: 16,color: Color(0xffb4b4b4)),),
-      trailing: CupertinoSwitch(value: isCompleted, onChanged: onValueChanged,activeColor: const Color(0xff3787eb),),
+      trailing: CupertinoSwitch(value: isCompleted, onChanged: onValueChanged,activeColor: Color(0xff3787eb),),
     );
   }
 }
